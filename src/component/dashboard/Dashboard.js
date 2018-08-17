@@ -11,11 +11,11 @@ class Dashboard extends Component {
 
         this.state = {
             housesToDisplay:[],
-            propType:'',
-            propAdress:'',
-            ppCity:'',
-            pState:'',
-            pZip:''
+            proptype:'',
+            propadress:'',
+            pcity:'',
+            pstate:'',
+            pzip:''
         }
 
        
@@ -31,16 +31,27 @@ class Dashboard extends Component {
     render(){
 
         const {housesToDisplay} = this.state;
-
+        
             return(
                
                  
             <div>
                 <h1>Dashboard</h1>
-                <Link to="/wizard">
+                <Link to="/wizard/stepone">
                     <Button>Add New Property</Button>
                 </Link> 
-               
+                {
+                   housesToDisplay.map(house => (
+                        <House key={house.houseid}               
+                        proptype= {house.proptype}
+                        propadress={house.propadress}
+                        pcity={house.pcity} 
+                        pstate={house.pstate} 
+                        pzip={house.pzip} 
+                         />
+
+                    )) 
+                }
                    
             </div>
          )

@@ -5,7 +5,7 @@ module.exports = {
     getHouses:(req,res,next) => {
         const dbInstance = req.app.get('db');
 
-        dbInstance.getHouses()
+        dbInstance.get_houses()
             .then( houses => res.status(200).send(houses)) 
             .catch( err => {
                 res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been infomred!"});
@@ -15,9 +15,9 @@ module.exports = {
     
     addHouse: (req,res,next) => {
         const dbInstance = req.app.get('db');
-        const { propType, propAdress, pCity, pState, pZip } = req.body;
-        
-        dbInstance.addAHouse([propType, propAdress, pCity, pState, pZip])
+        const { proptype, propadress, pcity, pstate, pzip, pimage,mortgage,rent } = req.body;
+        console.log(req.body)
+        dbInstance.add_house([proptype, propadress, pcity, pstate, pzip, pimage,mortgage,rent])
             .then( () => res.sendStatus(200) )
             .catch( err => {
                 res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been infomred!"});
@@ -26,17 +26,7 @@ module.exports = {
 
         },
 
-    updateImage:(req,res,next) => {
-        const dbInstance = req.app.get('db');
-
-        dbInstance.updateProductImage([params.id,query.image])
-            .then( () => res.sendStatus(200) )
-            .catch( err => {
-                res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been infomred!"});
-                console.log(err)
-            });
-    },
-
+    
        
     deleteHouse: (req,res,next) => {
         const dbInstance = req.app.get('db');

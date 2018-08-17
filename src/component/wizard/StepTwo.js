@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Button from './Button/Button';
+import Button from '../Button/Button';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { updateImage } from '../ducks/reducer';
+import { updateImage } from '../../ducks/reducer';
 
 class StepTwo extends Component {
 
@@ -10,7 +10,7 @@ class StepTwo extends Component {
         super(props)
 
         this.state = {
-            pImage: ''
+            pimage: ''
         }
     }
 
@@ -19,14 +19,13 @@ class StepTwo extends Component {
         return (
 
             <div>
-                <input type="text" placeholder="Image URL " onChange={(e) => updateImage(e.target.value)}>Add Image URL</input>
-                />
+                <input type="text" placeholder="Image URL " onChange={(e) => updateImage(e.target.value)}/>
     
-            <Link to="/stepone">
-                    <Button action>Previous Step</Button>
+            <Link to="/wizard/stepone">
+                    <Button >Previous Step</Button>
                 </Link>
-            <Link to="/stepthree">
-                    <Button action>Next Step</Button>
+            <Link to="/wizard/stepthree">
+                    <Button >Next Step</Button>
                 </Link>
 
             </div>
@@ -35,10 +34,10 @@ class StepTwo extends Component {
 }
 
 function mapStateToProps(state) {
-    const { pImage } = state;
+    const { pimage } = state;
 
     return {
-        pImage
+        pimage
     };
 
 }

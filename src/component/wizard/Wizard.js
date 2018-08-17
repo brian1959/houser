@@ -20,9 +20,14 @@ class Wizard extends Component {
             pState:'',
             pZip:''
         }
+        this.handleCancel = this.handleCancel.bind(this)
     }
 
-
+    handleCancel(){
+        this.setState({ proptype:'', propadress: '', pcity: '', pstate: 'UT',
+        pzip: '', pimage: '', mortgage: 0, rent: 0
+    })
+    }
 
     render(){
        
@@ -37,7 +42,7 @@ class Wizard extends Component {
 
 
                 <Link to="/">
-                    <Button>Cancel</Button>
+                    <Button action={this.handleCancel} >Cancel</Button>
                 </Link>
 
             </div>

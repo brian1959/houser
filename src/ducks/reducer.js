@@ -24,36 +24,36 @@ const UPDATE_IMAGE = 'UPDATE_IMAGE';
 
 
 
-export function updatePropertyType(propType){
+export function updatePropertyType(proptype){
     return{
         type:UPDATE_PROPERTY_TYPE,
-        payload: propType
+        payload: proptype
     }
 }
-export function updateAddress(propAdress){
+export function updateAddress(propadress){
     return {
         type: UPDATE_ADDRESS,
-        payload:propAdress
+        payload:propadress
     }
 }
-export function updateCity(pCity){
+export function updateCity(pcity){
     return{
         type:UPDATE_CITY,
-        payload: pCity
+        payload: pcity
     }
 }
 
-export function updateState(pState){
+export function updateState(pstate){
     return {
         type: UPDATE_STATE,
-        payload:pState
+        payload:pstate
     }
 }
 
-export function updateZip(pZip){
+export function updateZip(pzip){
     return {
         type: UPDATE_ZIP,
-        payload:pZip
+        payload:pzip
     }
 }
 export function updateMortgage(mortgage){
@@ -68,10 +68,10 @@ export function updateRent(rent){
         payload:rent
     }
 }
-export function updateImage(pImage){
+export function updateImage(pimage){
     return {
         type: UPDATE_IMAGE,
-        payload:pImage
+        payload:pimage
     }
 }
 
@@ -80,19 +80,19 @@ export function updateImage(pImage){
 export default function reducer(state= initialState, action){
     switch(action.type){
         case UPDATE_PROPERTY_TYPE:
-        return Object.assign({}, state, {propType:action.payload})
+        return Object.assign({}, state, {proptype:action.payload})
         
         case UPDATE_ADDRESS:
-            return Object.assign({}, state, {propAdress: action.payload})
+            return Object.assign({}, state, {propadress: action.payload})
 
         case UPDATE_CITY:
-            return Object.assign({} , state, {pCity: action.payload})
+            return Object.assign({} , state, {pcity: action.payload})
 
         case UPDATE_STATE:
-            return Object.assign({}, state, {pState: action.payload})
+            return Object.assign({}, state, {pstate: action.payload})
 
         case UPDATE_ZIP:
-            return Object.assign({}, state, {pZip: action.payload})
+            return Object.assign({}, state, {pzip: action.payload})
 
         case UPDATE_MORTGAGE:
             return Object.assign({}, state, {mortgage: action.payload})
@@ -101,7 +101,7 @@ export default function reducer(state= initialState, action){
             return Object.assign({}, state, {rent: action.payload})
 
         case UPDATE_IMAGE:
-            return Object.assign({}, state, {pImage: action.payload})
+            return Object.assign({}, state, {pimage: action.payload})
     
         default:
             return state

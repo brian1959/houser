@@ -32,7 +32,7 @@ module.exports = {
         const dbInstance = req.app.get('db');
         const {params} =req;
 
-        dbInstance.deleteHouse([params.id])
+        dbInstance.delete_house([params.id])
             .then( () => res.sendStatus(200) )
             .catch( err => {
                 res.status(500).send({errorMessage: "Oops! Something went wrong. Our engineers have been infomred!"});

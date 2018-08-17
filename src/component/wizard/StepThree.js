@@ -10,10 +10,7 @@ class StepThree extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            mortgage: '',
-            rent: ''
-        }
+
     }
     onClickComplete(){
             let newHouse = {
@@ -43,6 +40,7 @@ class StepThree extends Component {
   
 
     render() {
+        const {updateMortgage, updateRent} = this.props;
 
         return (
 

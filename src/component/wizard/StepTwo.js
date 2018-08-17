@@ -9,12 +9,12 @@ class StepTwo extends Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            pimage: ''
-        }
+        
     }
 
     render() {
+
+        const {updateImage} = this.props; 
 
         return (
 

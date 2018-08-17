@@ -6,22 +6,11 @@ import { updatePropertyType, updateAddress, updateCity, updateState, updateZip} 
 
 class StepOne extends Component{
 
-    constructor(props){
-        super(props)
-
-        this.state = {
-        housesToDisplay:[],
-        proptype:'',
-        propadress:'',
-        pcity:'',
-        pstate:'',
-        pzip:''
-        }
-    }
 
 
     render(){
-   
+        const {updatePropertyType, updateAddress, updateCity, updateState, updateZip} = this.props;
+
         return(
 
             <div>
@@ -44,14 +33,14 @@ class StepOne extends Component{
 
 
 function mapStateToProps(state){
-const {propType, propAdress, pCity, pState, pZip} = state;
+const {proptype, propadress, pcity, pstate, pzip} = state;
 
 return{
-    propType,
-    propAdress,
-    pCity,
-    pState,
-    pZip   
+    proptype,
+    propadress,
+    pcity,
+    pstate,
+    pzip   
 };
 
 }
